@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <article>
+          <h1>7.4 Open source development</h1>
+          <p>
+            Open source development is an approach to software development in
+            which the source code of a software system is published and
+            volunteers are invited to participate in the development process
+            (Raymond, 2001). Its roots are in the Free Software Foundation
+            (http://www.fsf.org), which advocates that source code should not be
+            proprietary but rather should always be available for users to
+            examine and modify as they wish. There was an assumption that the
+            code would be controlled and developed by a small core group, rather
+            than users of the code
+          </p>
+
+          <p>
+            Open source software extended this idea by using the Internet to
+            recruit a much larger population of volunteer developers. Many of
+            them are also users of the code. In principle at least, any
+            contributor to an open source project may report and fix bugs and
+            propose new features and functionality. However, in practice,
+            successful open source systems still rely on a core group of
+            developers who control changes to the software.
+          </p>
+
+          <p>
+            The best-known open source product is, of course, the Linux
+            operating system which is widely used as a server system and,
+            increasingly, as a desktop environment. Other important open source
+            products are Java, the Apache web server, and the mySQL database
+            management system. Major players in the computer industry such as
+            IBM and Sun support the open source movement and base their software
+            on open source products. There are thousands of other, lesser known
+            open source systems and components that may also be used
+          </p>
+
+          <p>
+            It is usually fairly cheap or free to acquire open source software.
+            You can normally download open source software without charge.
+            However, if you want documentation and support, then you may have to
+            pay for this, but costs are usually fairly low. The other key
+            benefit of using open source products is that mature open source
+            systems are usually very reliable. The reason for this is that they
+            have a large population of users who are willing to fix problems
+            themselves rather than report these problems to the developer and
+            wait for a new release of the system. Bugs are discovered and
+            repaired more quickly than is usually possible with proprietary
+            software. For a company involved in software development, there are
+            two open source issues that have to be considered:
+          </p>
+        </article>
+        <article>
+          <ol>
+            <p>
+              1. Should the product that is being developed make use of open
+              source components?
+            </p>
+            <p>
+              2. Should an open source approach be used for the software’s
+              development?
+            </p>
+          </ol>
+        </article>
+        <article>
+          <p>
+            The answers to these questions depend on the type of software that
+            is being developed and the background and experience of the
+            development team. If you are developing a software product for sale,
+            then time to market and reduced costs are critical. If you are
+            developing in a domain in which there are high-quality open source
+            systems available, you can save time and money by using these
+            systems. However, if you are developing software to a specific set
+            of organizational requirements, then using open source components
+            may not be an option. You may have to integrate your software with
+            existing systems that are incompatible with available open source
+            systems. Even then, however, it could be quicker and cheaper to
+            modify the open source system rather than redevelop the
+            functionality that you need.
+          </p>
+
+          <p>
+            More and more product companies are using an open source approach to
+            development. Their business model is not reliant on selling a
+            software product but rather on selling support for that product.
+            They believe that involving the open source community will allow
+            software to be developed more cheaply, more quickly, and will create
+            a community of users for the software. Again, however, this is
+            really only applicable for general software products rather than
+            specific organizational applications. Many companies believe that
+            adopting an open source approach will reveal confidential business
+            knowledge to their competitors and so are reluctant to adopt this
+            development model. However, if you are working in a small company
+            and you open source your software, this may reassure customers that
+            they will be able to support the software if your company goes out
+            of business.
+          </p>
+
+          <p>
+            Publishing the source code of a system does not mean that people
+            from the wider community will necessarily help with its development.
+            Most successful open source products have been platform products
+            rather than application systems. There are a limited number of
+            developers who might be interested in specialized application
+            systems. As such, making a software system open source does not
+            guarantee community involvement.
+          </p>
+        </article>
+
+        <article>
+          <h2>7.4.1 Open Source Licensing</h2>
+
+          <p>
+            Although a fundamental principle of open-source development is that
+            source code should be freely available, this does not mean that
+            anyone can do as they wish with that code. Legally, the developer of
+            the code (either a company or an individual) still owns the code.
+            They can place restrictions on how it is used by including legally
+            binding conditions in an open source software license (St. Laurent,
+            2004). Some open source developers believe that if an open source
+            component is used to develop a new system, then that system should
+            also be open source. Others are willing to allow their code to be
+            used without this restriction. The developed systems may be
+            proprietary and sold as closed source systems. Most open source
+            licenses are derived from one of three general models:
+          </p>
+
+          <ol>
+            <p>
+              1. The GNU General Public License (GPL). This is a so-called
+              ‘reciprocal’ license that, simplistically, means that if you use
+              open source software that is licensed under the GPL license, then
+              you must make that software open source
+            </p>
+
+            <p>
+              2. The GNU Lesser General Public License (LGPL). This is a variant
+              of the GPL license where you can write components that link to
+              open source code without having to publish the source of these
+              components. However, if you change the licensed component, then
+              you must publish this as open source
+            </p>
+
+            <p>
+              3. The Berkley Standard Distribution (BSD) License. This is a
+              non-reciprocal license, which means you are not obliged to
+              republish any changes or modifications made to open source code.
+              You can include the code in proprietary systems that are sold. If
+              you use open source components, you must acknowledge the original
+              creator of the code.
+            </p>
+          </ol>
+        </article>
+        <article>
+          <p>
+            Licensing issues are important because if you use open-source
+            software as part of a software product, then you may be obliged by
+            the terms of the license to make your own product open source. If
+            you are trying to sell your software, you may wish to keep it
+            secret. This means that you may wish to avoid using GPL-licensed
+            open source software in its development.
+          </p>
+
+          <p>
+            If you are building software that runs on an open source platform,
+            such as Linux, then licenses are not a problem. However, as soon as
+            you start including open source components in your software you need
+            to set up processes and databases to keep track of what’s been used
+            and their license conditions. Bayersdorfer (2007) suggests that
+            companies managing projects that use open source should:
+          </p>
+
+          <ol>
+            <p>
+              1. Establish a system for maintaining information about open
+              source components that are downloaded and used. You have to keep a
+              copy of the license for each component that was valid at the time
+              the component was used. Licenses may change so you need to know
+              the conditions that you have agreed to.
+            </p>
+
+            <p>
+              2. Be aware of the different types of licenses and understand how
+              a component is licensed before it is used. You may decide to use a
+              component in one system but not in another because you plan to use
+              these systems in different ways
+            </p>
+
+            <p>3. Be aware of evolution pathways for components. You need to know a bit about
+            the open source project where components are developed to understand how
+            they might change in future.
+            </p>
+
+
+            <p>4. Educate people about open source. It’s not enough to have procedures in place
+            to ensure compliance with license conditions. You also need to educate developers about open source and open source licensing.
+            </p>
+
+            <p>5. Have auditing systems in place. Developers, under tight deadlines, might be
+            tempted to break the terms of a license. If possible, you should have software in
+            place to detect and stop this.</p>
+
+            <p>6. Participate in the open source community. If you rely on open source products,
+            you should participate in the community and help support their development.</p>
+
+          </ol>
+
+          <p>The business model of software is changing. It is becoming increasingly difficult
+            to build a business by selling specialized software systems. Many companies prefer
+            to make their software open source and then sell support and consultancy to software
+            users. This trend is likely to accelerate, with increasing use of open source software
+            and with more and more software available in this form.
+          </p>
+        </article>
+      </section>
+    </header>
+  </body>
+</html>
