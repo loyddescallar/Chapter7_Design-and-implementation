@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1 Object-oriented design using the UML</title>
+
+    <body>
+        <p>Software design and implementation is the stage in the software engineering process
+at which an executable software system is developed. For some simple systems, software design and implementation is software engineering, and all other activities are
+merged with this process. However, for large systems, software design and implementation is only one of a set of processes (requirements engineering, verification
+and validation, etc.) involved in software engineering.</p>
+        <p>Software design and implementation activities are invariably interleaved.
+Software design is a creative activity in which you identify software components and
+their relationships, based on a customer’s requirements. Implementation is the
+process of realizing the design as a program. Sometimes, there is a separate design
+stage and this design is modeled and documented. At other times, a design is in the
+programmer’s head or roughly sketched on a whiteboard or sheets of paper. Design
+is about how to solve a problem, so there is always a design process. However, it
+isn’t always necessary or appropriate to describe the design in detail using the UML
+or other design description language.</p>
+        <p>Design and implementation are closely linked and you should normally take
+implementation issues into account when developing a design. For example, using
+the UML to document a design may be the right thing to do if you are programming
+in an object-oriented language such as Java or C#. It is less useful, I think, if you are
+developing in a dynamically typed language like Python and makes no sense at all if
+you are implementing your system by configuring an off-the-shelf package. As I discussed in Chapter 3, agile methods usually work from informal sketches of the
+design and leave many design decisions to programmers.</p>
+        <p>One of the most important implementation decisions that has to be made at an
+early stage of a software project is whether or not you should buy or build the application software. In a wide range of domains, it is now possible to buy off-the-shelf
+systems (COTS) that can be adapted and tailored to the users’ requirements. For
+example, if you want to implement a medical records system, you can buy a package
+that is already used in hospitals. It can be cheaper and faster to use this approach
+rather than developing a system in a conventional programming language.</p>
+        <p>When you develop an application in this way, the design process becomes concerned with how to use the configuration features of that system to deliver the system requirements. You don’t usually develop design models of the system, such as
+models of the system objects and their interactions. I discuss this COTS-based
+approach to development in Chapter 16.</p>
+        <p>I assume that most readers of this book will have had experience of program
+design and implementation. This is something that you acquire as you learn to program and master the elements of a programming language like Java or Python. You
+will have probably learned about good programming practice in the programming
+languages that you have studied, as well as how to debug programs that you have
+developed. Therefore, I don’t cover programming topics here. Instead, this chapter
+has two aims:</p>
+        <p>1. To show how system modeling and architectural design (covered in Chapters 5
+and 6) are put into practice in developing an object-oriented software design.</p>
+
+
+
+
+<section>
+     Chapter 7 <font color="blue">■</font> Design and implementation
+</section>
+
+
+    <p> <img src="https://img.icons8.com/?size=20&id=N7X7JATEU02D&format=png&color=000000" alt="">Structured design methods</p>
+    <p> propose that software design should be tackled in a methodical way. Designing a
+system involves following the steps of the method and refining the design of a system at increasingly detailed
+levels. In the 1990s, there were a number of competing methods for object-oriented design. However, the
+inventors of the most commonly used methods came together and invented the UML, which unified the
+notations used in the different methods.
+Rather than focus on methods, most discussions now are about processes where design is seen as part of the
+overall software development process. The Rational Unified Process (RUP) is a good example of a generic
+development process.
+
+        <p>http://www.SoftwareEngineering-9.com/Web/Structured-methods/Structured design methods</p>
+
+        <p>2. To introduce important implementation issues that are not usually covered in
+programming books. These include software reuse, configuration management,
+and open source development.</p>
+        <p>As there are a vast number of different development platforms, the chapter is not
+biased towards any particular programming language or implementation technology.
+Therefore, I have presented all examples using the UML rather than in a programming language such as Java or Python</p>
+
+<font color="blue">7.1 Object-oriented design using the UML</font>
+
+            <p>An object-oriented system is made up of interacting objects that maintain their own
+local state and provide operations on that state. The representation of the state is private and cannot be accessed directly from outside the object. Object-oriented design
+processes involve designing object classes and the relationships between these
+classes. These classes define the objects in the system and their interactions. When
+the design is realized as an executing program, the objects are created dynamically
+from these class definitions.</p>
+                <p>Object-oriented systems are easier to change than systems developed using functional approaches. Objects include both data and operations to manipulate that data.
+They may therefore be understood and modified as stand-alone entities. Changing the
+implementation of an object or adding services should not affect other system objects.
+Because objects are associated with things, there is often a clear mapping between realworld entities (such as hardware components) and their controlling objects in the system. This improves the understandability, and hence the maintainability, of the design.
+To develop a system design from concept to detailed, object-oriented design,
+there are several things that you need to do:</p>
+                    <p>1. Understand and define the context and the external interactions with the system.</p>
+                    <p>2. Design the system architecture.</p>
+                    <p>3. Identify the principal objects in the system.</p>
+                    <p>4. Develop design models.</p>
+                    <p>5. Specify interfaces</p>
+
+    <p>Like all creative activities, design is not a clear-cut, sequential process. You
+develop a design by getting ideas, proposing solutions, and refining these solutions
+as information becomes available. You inevitably have to backtrack and retry when
+problems arise. Sometimes you explore options in detail to see if they work; at other
+times you ignore details until late in the process. Consequently, I have deliberately
+not illustrated this process as a simple diagram because that would imply design can
+be thought of as a neat sequence of activities. In fact, all of the above activities are
+interleaved and so influence each other.</p>
+    <p>I illustrate these process activities by designing part of the software for the wilderness weather station that I introduced in Chapter 1. Wilderness weather stations are
+deployed in remote areas. Each weather station records local weather information and
+periodically transfers this to a weather information system, using a satellite link.</p>
+
+<font color="blue"><u>7.1.1 System context and interactions</u>__________________</font>
+
+        <p>The first stage in any software design process is to develop an understanding of the
+relationships between the software that is being designed and its external environment. This is essential for deciding how to provide the required system functionality
+and how to structure the system to communicate with its environment. Understanding
+of the context also lets you establish the boundaries of the system.</p>
+            <p>Setting the system boundaries helps you decide what features are implemented
+in the system being designed and what features are in other associated systems. In
+this case, you need to decide how functionality is distributed between the control
+system for all of the weather stations, and the embedded software in the weather
+station itself.</p>
+                <p>System context models and interaction models present complementary views of
+the relationships between a system and its environment:</p>
+                    <p>1. A system context model is a structural model that demonstrates the other systems in the environment of the system being developed.</p>
+                    <p>2. An interaction model is a dynamic model that shows how the system interacts
+with its environment as it is used.</p>
+
+<p>The context model of a system may be represented using associations. Associations
+simply show that there are some relationships between the entities involved in the
+association. The nature of the relationships is now specified. You may therefore document the environment of the system using a simple block diagram, showing the entities
+in the system and their associations. This is illustrated in Figure 7.1, which shows that</p>
+
+<section>Chapter 7 <font color="blue">■</font> Design and implementation</section>
+
+    <p> <img src="https://img.icons8.com/?size=20&id=N7X7JATEU02D&format=png&color=000000" alt="">Weather station use cases</p>
+    <P>Report weather—send weather data to the weather information system</P>
+    <P>Report status—send status information to the weather information system</P>
+    <P>Restart—if the weather station is shut down, restart the system</P>
+    <P>Shutdown—shut down the weather station</P>
+    <P>Reconfigure—reconfigure the weather station software</P>
+    <P>Powersave—put the weather station into power-saving mode</p>
+    <P>Remote control—send control commands to any weather station subsystem</P>
+    
+                <p>http://www.SoftwareEngineering-9.com/Web/WS/Usecases.html</p>
+
+<p>the systems in the environment of each weather station are a weather information system, an onboard satellite system, and a control system. The cardinality information on
+the link shows that there is one control system but several weather stations, one satellite,
+and one general weather information system.</p>
+<p>When you model the interactions of a system with its environment you should use
+an abstract approach that does not include too much detail. One way to do this is to
+use a use case model. As I discussed in Chapters 4 and 5, each use case represents an
+interaction with the system. Each possible interaction is named in an ellipse and the
+external entity involved in the interaction is represented by a stick figure.</p>
+<p>The use case model for the weather station is shown in Figure 7.2. This shows
+that the weather station interacts with the weather information system to report
+weather data and the status of the weather station hardware. Other interactions are
+with a control system that can issue specific weather station control commands. As I
+explained in Chapter 5, a stick figure is used in the UML to represent other systems
+as well as human users.</p>
+<p>Each of these use cases should be described in structured natural language. This
+helps designers identify objects in the system and gives them an understanding of
+what the system is intended to do. I use a standard format for this description that
+clearly identifies what information is exchanged, how the interaction is initiated, and</p>
+
+  <center><img src="Screenshot (63).png" alt="Centered Image"></center>
+  <center><img src="Screenshot (62).png" alt="Centered Image"></center>
+  
+  <section>
+<font color="blue"><u>7.1.2 Architectural design</u>__________________</font>
+    </section>
+
+    <p><b>Figure 7.3</b> Use case
+description—Report
+weather</p>
+
+<p>Once the interactions between the software system and the system’s environment
+have been defined, you use this information as a basis for designing the system
+architecture. Of course, you need to combine this with your general knowledge of
+the principles of architectural design and with more detailed domain knowledge.</p>
+
+<center><img src="Screenshot (64).png" alt="Centered Image"></center>
+
+<section>Chapter 7 <font color="blue">■</font> Design and implementation</section>
+
+<center><img src="Screenshot 2025-09-03 105445.png" alt="Centered Image"></center>
+
+<p>You identify the major components that make up the system and their interactions,
+and then may organize the components using an architectural pattern such as a layered or client–server model. However, this is not essential at this stage.</p>
+<p>The high-level architectural design for the weather station software is shown in
+Figure 7.4. The weather station is composed of independent subsystems that communicate by broadcasting messages on a common infrastructure, shown as the
+Communication link in Figure 7.4. Each subsystem listens for messages on that
+infrastructure and picks up the messages that are intended for them. This is
+another commonly used architectural style in addition to those described in
+Chapter 6.</p>
+  <p>For example, when the communications subsystem receives a control command, such as shutdown, the command is picked up by each of the other subsystems, which then shut themselves down in the correct way. The key benefit of this
+architecture is that it is easy to support different configurations of subsystems
+because the sender of a message does not need to address the message to a particular subsystem.</p>
+<p>Figure 7.5 shows the architecture of the data collection subsystem, which is
+included in Figure 7.4. The Transmitter and Receiver objects are concerned with
+managing communications and the WeatherData object encapsulates the information
+that is collected from the instruments and transmitted to the weather information
+system. This arrangement follows the producer-consumer pattern, discussed in
+Chapter 20.</p>
+
+<font color="blue"><u>7.1.3  Object class identification</u>__________________</font>
+
+<p>By this stage in the design process, you should have some ideas about the essential objects in the system that you are designing. As your understanding of the
+design develops, you refine these ideas about the system objects. The use case
+description helps to identify objects and operations in the system. From the
+description of the Report weather use case, it is obvious that objects representing
+the instruments that collect weather data will be required, as will an object
+representing the summary of the weather data. You also usually need a high-level</p>
+
+<center><img src="Screenshot 205-09-03 110004.png" alt="Centered Image"></center>
+
+<p>system object or objects that encapsulate the system interactions defined in the
+use cases. With these objects in mind, you can start to identify the object classes
+in the system.</p>
+
+<p>There have been various proposals made about how to identify object classes in
+object-oriented systems:</p>
+
+<p>1. Use a grammatical analysis of a natural language description of the system to be
+constructed. Objects and attributes are nouns; operations or services are verbs
+(Abbott, 1983).</p>
+
+<p>2. Use tangible entities (things) in the application domain such as aircraft, roles
+such as manager or doctor, events such as requests, interactions such as meetings, locations such as offices, organizational units such as companies, and
+so on (Coad and Yourdon, 1990; Shlaer and Mellor, 1988; Wirfs-Brock
+et al., 1990).</p>
+
+<p>3. Use a scenario-based analysis where various scenarios of system use are identified and analyzed in turn. As each scenario is analyzed, the team responsible for
+the analysis must identify the required objects, attributes, and operations (Beck
+and Cunningham, 1989).</p>
+
+<p>In practice, you have to use several knowledge sources to discover object classes.
+Object classes, attributes, and operations that are initially identified from the informal system description can be a starting point for the design. Further information
+from application domain knowledge or scenario analysis may then be used to refine
+and extend the initial objects. This information can be collected from requirements
+documents, discussions with users, or from analyses of existing systems</p>
+
+<p>In the wilderness weather station, object identification is based on the tangible
+hardware in the system. I don’t have space to include all the system objects here, but
+I have shown five object classes in Figure 7.6. The Ground thermometer,
+Anemometer, and Barometer objects are application domain objects, and the
+WeatherStation and WeatherData objects have been identified from the system
+description and the scenario (use case) description:</p>
+
+<p>1. The WeatherStation object class provides the basic interface of the weather
+station with its environment. Its operations reflect the interactions shown in
+
+
+<center><img src="Screenshot 225-09-03 110233.png" alt="Centered Image"></center>
+Figure 7.3. In this case, I use a single object class to encapsulate all of these
+interactions, but in other designs you could design the system interface as several different classes</p>
+<p>2. The WeatherData object class is responsible for processing the report weather
+command. It sends the summarized data from the weather station instruments to
+the weather information system.</p>
+
+<p>3. The Ground thermometer, Anemometer, and Barometer object classes are
+directly related to instruments in the system. They reflect tangible hardware
+entities in the system and the operations are concerned with controlling that
+hardware. These objects operate autonomously to collect data at the specified
+frequency and store the collected data locally. This data is delivered to the
+WeatherData object on request.</p>
+
+<p>You use knowledge of the application domain to identify other objects, attributes,
+and services. We know that weather stations are often located in remote places and
+include various instruments that sometimes go wrong. Instrument failures should be
+reported automatically. This implies that you need attributes and operations to check
+the correct functioning of the instruments. There are many remote weather stations
+so each weather station should have its own identifier</p>
+
+<p>At this stage in the design process, you should focus on the objects themselves, without thinking about how these might be implemented. Once you have identified the
+objects, you then refine the object design. You look for common features and then
+design the inheritance hierarchy for the system. For example, you may identify an
+Instrument superclass, which defines the common features of all instruments, such as an
+identifier, and get and test operations. You may also add new attributes and operations to
+the superclass, such as an attribute that maintains the frequency of data collection.</p>
+
+
+<font color="blue"><u>7.1.4 Design models</u>__________________</font>
+<p>Design or system models, as I discussed in Chapter 5, show the objects or object classes
+in a system. They also show the associations and relationships between these entities.
+These models are the bridge between the system requirements and the implementation
+of a system. They have to be abstract so that unnecessary detail doesn’t hide the relationships between them and the system requirements. However, they also have to
+include enough detail for programmers to make implementation decisions.</p>
+
+<p>Generally, you get around this type of conflict by developing models at different
+levels of detail. Where there are close links between requirements engineers, designers, and programmers, then abstract models may be all that are required. Specific
+design decisions may be made as the system is implemented, with problems resolved
+through informal discussions. When the links between system specifiers, designers,
+and programmers are indirect (e.g., where a system is being designed in one part of
+an organization but implemented elsewhere), then more detailed models are likely to
+be needed.</p>
+
+<p>An important step in the design process, therefore, is to decide on the design
+models that you need and the level of detail required in these models. This depends
+on the type of system that is being developed. You design a sequential data-processing system in a different way from an embedded real-time system, so you will need
+different design models. The UML supports 13 different types of models but, as I
+discussed in Chapter 5, you rarely use all of these. Minimizing the number of models that are produced reduces the costs of the design and the time required to complete the design process.</p>
+
+<p>When you use the UML to develop a design, you will normally develop two kinds
+of design model:</p>
+
+<P>1. Structural models, which describe the static structure of the system using object classes and their relationships. Important relationships that may be documented
+at this stage are generalization (inheritance) relationships, uses/used-by relationships, and composition relationships.</P>
+
+<p>2. Dynamic models, which describe the dynamic structure of the system and showthe interactions between the system objects. Interactions that may be documented include the sequence of service requests made by objects and the state
+    changes that are triggered by these object interactions.</p>
+
+<p>In the early stages of the design process, I think there are three models that are
+particularly useful for adding detail to use case and architectural models:</p>
+
+<p>1. Subsystem models, which that show logical groupings of objects into coherent
+subsystems. These are represented using a form of class diagram with each subsystem shown as a package with enclosed objects. Subsystem models are static
+(structural) models.</p>
+
+<section>Chapter 7 <font color="blue">■</font> Design and implementation</section>
+<center><img src="Screenshot 20025-09-03 110856.png" alt="Centered Image"></center>
+
+<p>2. Sequence models, which show the sequence of object interactions. These are
+represented using a UML sequence or a collaboration diagram. Sequence
+models are dynamic models.</p>
+<p>3. State machine model, which show how individual objects change their state in
+response to events. These are represented in the UML using state diagrams.
+State machine models are dynamic models.</p>
+<p>A subsystem model is a useful static model as it shows how a design is organized into
+logically related groups of objects. I have already shown this type of model in Figure 7.4
+to show the subsystems in the weather mapping system. As well as subsystem models,
+you may also design detailed object models, showing all of the objects in the systems
+and their associations (inheritance, generalization, aggregation, etc.). However, there is
+a danger in doing too much modeling. You should not make detailed decisions about the
+implementation that really should be left to the system programmers.</p>
+<p>Sequence models are dynamic models that describe, for each mode of interaction,
+the sequence of object interactions that take place. When documenting a design, you
+should produce a sequence model for each significant interaction. If you have developed a use case model then there should be a sequence model for each use case that
+you have identified.</p>
+<p>Figure 7.7 is an example of a sequence model, shown as a UML sequence diagram. This diagram shows the sequence of interactions that take place when an
+external system requests the summarized data from the weather station. You read
+sequence diagrams from top to bottom:</p>
+<p>1. The SatComms object receives a request from the weather information system
+to collect a weather report from a weather station. It acknowledges receipt of this request. The stick arrowhead on the sent message indicates that the external
+system does not wait for a reply but can carry on with other processing.</p>
+<p>2. SatComms sends a message to WeatherStation, via a satellite link, to create a
+summary of the collected weather data. Again, the stick arrowhead indicates
+that SatComms does not suspend itself waiting for a reply.</p>
+<p>3. WeatherStation sends a message to a Commslink object to summarize the
+weather data. In this case, the squared-off style of arrowhead indicates that the
+instance of the WeatherStation object class waits for a reply.</p>
+<p>4. Commslink calls the summarize method in the object WeatherData and waits for
+a reply.</p>
+<p>5. The weather data summary is computed and returned to WeatherStation via the
+Commslink object</p>
+<p>6. WeatherStation then calls the SatComms object to transmit the summarized
+data to the weather information system, through the satellite communications
+system</p>
+<p>The SatComms and WeatherStation objects may be implemented as concurrent
+processes, whose execution can be suspended and resumed. The SatComms object
+instance listens for messages from the external system, decodes these messages and
+initiates weather station operations.</p>
+<p>Sequence diagrams are used to model the combined behavior of a group of
+objects but you may also want to summarize the behavior of an object or a subsystem
+in response to messages and events. To do this, you can use a state machine model
+that shows how the object instance changes state depending on the messages that it
+receives. The UML includes state diagrams, initially invented by Harel (1987) to
+describe state machine models.</p>
+<p>Figure 7.8 is a state diagram for the weather station system that shows how it
+responds to requests for various services.
+You can read this diagram as follows:</p>
+<p>1. If the system state is Shutdown then it can respond to a restart(), a reconfigure(),
+or a powerSave() message. The unlabeled arrow with the black blob indicates
+that the Shutdown state is the initial state. A restart() message causes a transition
+to normal operation. Both the powerSave() and reconfigure() messages cause a
+transition to a state in which the system reconfigures itself. The state diagram
+shows that reconfiguration is only allowed if the system has been shut down</p>
+<p>2. In the Running state, the system expects further messages. If a shutdown() message is received, the object returns to the shutdown state.</p>
+<p>3. If a reportWeather() message is received, the system moves to the Summarizing
+state. When the summary is complete, the system moves to a Transmitting state
+where the information is transmitted to the remote system. It then returns to the
+Running state.</p>
+
+<center><img src="Screenshot 20255-09-03 111258.png" alt="Centered Image"></center>
+<p>4. If a reportStatus() message is received, the system moves to the Testing state,
+then the Transmitting state, before returning to the Running state.</p>
+<p>5. If a signal from the clock is received, the system moves to the Collecting state,
+where it collects data from the instruments. Each instrument is instructed in turn
+to collect its data from the associated sensors.</p>
+<p>6. If a remoteControl() message is received, the system moves to a controlled state
+in which it responds to a different set of messages from the remote control
+room. These are not shown on this diagram.</p>
+<p>State diagrams are useful high-level models of a system or an object’s operation.
+You don’t usually need a state diagram for all of the objects in the system. Many of
+the objects in a system are relatively simple and a state model adds unnecessary
+detail to the design.</p>
+
+<font color="blue"><u>7.1.5 Interface specification</u>__________________</font>
+
+    <p>An important part of any design process is the specification of the interfaces between
+the components in the design. You need to specify interfaces so that objects and subsystems can be designed in parallel. Once an interface has been specified, the developers of other objects may assume that interface will be implemented.</p>
+
+<p>Interface design is concerned with specifying the detail of the interface to an
+object or to a group of objects. This means defining the signatures and semantics of</p>
+
+<center><img src="Screenshot 2023.png" alt="Centered Image"></center>
+<p>the services that are provided by the object or by a group of objects. Interfaces can be
+specified in the UML using the same notation as a class diagram. However, there is
+no attribute section and the UML stereotype ‹‹interface›› should be included in the
+name part. The semantics of the interface may be defined using the object constraint
+language (OCL). I explain this in Chapter 17, where I cover component-based software engineering. I also show an alternative way to represent interfaces in the UML.</p>
+<p>You should not include details of the data representation in an interface design,
+as attributes are not defined in an interface specification. However, you should
+include operations to access and update data. As the data representation is hidden, it
+can be easily changed without affecting the objects that use that data. This leads to
+a design that is inherently more maintainable. For example, an array representation
+of a stack may be changed to a list representation without affecting other objects
+that use the stack. By contrast, it often makes sense to expose the attributes in a
+static design model, as this is the most compact way of illustrating essential characteristics of the objects.</p>
+
+
+<p>There is not a simple 1:1 relationship between objects and interfaces. The same
+object may have several interfaces, each of which is a viewpoint on the methods that
+it provides. This is supported directly in Java, where interfaces are declared separately from objects and objects ‘implement’ interfaces. Equally, a group of objects
+may all be accessed through a single interface</p>
+
+<p>Figure 7.9 shows two interfaces that may be defined for the weather station. The
+left-hand interface is a reporting interface that defines the operation names that are
+used to generate weather and status reports. These map directly to operations in the
+WeatherStation object. The remote control interface provides four operations, which
+map onto a single method in the WeatherStation object. In this case, the individual
+operations are encoded in the command string associated with the remoteControl
+method, shown in Figure 7.6.</p>
+
+
+    </body>
