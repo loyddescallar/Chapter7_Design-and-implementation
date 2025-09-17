@@ -1,11 +1,20 @@
+/* Configurations */
+:root {
+  --primary: #333;
+  --secondary: #f9f9f9;
+  --complimentary: #2c3e50;
+  --dark: #34495e;
+  --light: white;
+}
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  line-height: 1.8;
+  background: var(--secondary);
+  color: var(--primary);
 }
 
 main {
@@ -14,28 +23,28 @@ main {
 
 /* Header */
 header {
-  background-color: #2c3e50;
-  color: white;
+  background: var(--complimentary);
+  color: var(--light);
   padding: 20px;
   text-align: center;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 /* Headings */
 h2 {
-  color: #2c3e50;
+  color: var(--complimentary);
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 /* Lists */
 ul {
-  margin: 15px 50;
+  margin: 15px 50px; 
   padding-left: 20px;
 }
 
@@ -44,13 +53,13 @@ li {
 }
 
 strong {
-  color: #34495e;
+  color: var(--dark);
 }
 
 /* Footer */
 footer {
-  background-color: #2c3e50;
-  color: white;
+  background: var(--complimentary);
+  color: var(--light);
   text-align: center;
   padding: 15px 10px;
   margin-top: 40px;
