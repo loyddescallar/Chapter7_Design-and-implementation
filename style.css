@@ -4,16 +4,26 @@
         --Container: #745190;
         --font: #000000;
         --border: #572d79;
+        --Footer: white; 
 
-    @font-face {
-        font-family: myFirstFont;
-        src: url(sansation_light.woff);
-    }
+    
 
  }
+
+        @font-face {
+        font-family: 'FT';
+        src: url(font.ttf);
+    }
+
+        @font-face {
+            font-family: 'FT2';
+            src: url(font2.ttf);
+        }
+
+    
         body{
             background-color: var(--Primary) ;
-
+            
 
 
         }
@@ -27,6 +37,8 @@
         border-radius: 60px;
         border-style: double;
         border-color: var(--border);
+        font-family: 'FT2';
+        
     }
 
 
@@ -44,6 +56,7 @@
         border-style:dashed;
         border-color: var(--border);
         border-radius: 60px;
+        font-family: 'FT';
 
 
     }
@@ -61,6 +74,7 @@
         border-style:dashed;
         border-color: var(--border);
         border-radius: 60px;
+        font-family: 'FT';
 }
 
 
@@ -72,17 +86,34 @@
         border-radius: 60px;
         border-style:double;
         border-color: var(--border);
+        font-family: 'FT2';
     }
 
 
+
+
+
+.Author {
+    color: var(--Footer);
+
+
+}
+
+.About{
+    font-family: 'FT2';
+    font-size: 25px;
+
+
+
+}
 
 .Footer {
         background-color: var(--Secondary);
         text-align: center;
         color: var(--font);
-
-
 }
+
+
 
 
 
