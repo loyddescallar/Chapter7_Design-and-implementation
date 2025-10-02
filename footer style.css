@@ -1,3 +1,5 @@
+ patch-3
+
 patch-3
 footer {
     background-color: rgb(5, 82, 128);
@@ -10,6 +12,7 @@ footer {
 footer a {
     color: white;
 
+main
 body{
     font-size: 20px;
     margin: 10px 10px;
@@ -26,6 +29,9 @@ footer {
 
 footer a {
     color:aliceblue;
+patch-3
+
+main
 main
     text-decoration: none;
     margin: 0 10px;
