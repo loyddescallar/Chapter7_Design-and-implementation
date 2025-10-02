@@ -1,0 +1,155 @@
+<DOCTYPE html> 
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>7.2 Design Patterns</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <main>
+    
+    <section>
+    <h1>7.2 Design Patterns</h1>
+    <P> Design patterns were derived from ideas put forward by Christopher Alexander
+    (Alexander et al., 1977), who suggested that there were certain common patterns of
+    building design that were inherently pleasing and effective. The pattern is a description
+    of the problem and the essence of its solution, so that the solution may be reused in.
+    he object itself and allows alternative displaysomatically notified and updated to reflectle displays of state information, may be known when the information is and, when the state is changed, all displayslay format for state information iss the state information to know about thend Observer, and two concrete objects, the related abstract objects. The abstracttions. The state to be displayed isct allowing it to add and removeotification when the state has changedct and implements the Update()The ConcreteObserver automaticallyed. not know details of the concrete class.of this lack of knowledge, optimizationsbject may cause a set of linked updates.
+    <p>
+    
+    <section class =>
+        <img src="Pattern.png" alt="">
+    </section>
+    
+    
+    <h1>Figure 7.10 The Observer pattern</h1>
+    <P>
+        Different settings. The pattern is not a detailed specification. Rather, you can think of it
+    as a description of accumulated wisdom and experience, a well-tried solution to a common problem.
+    A quote from the Hillside Group web site (http://hillside.net), which is dedicated
+    to maintaining information about patterns, encapsulates their role in reuse:
+    Patterns and Pattern Languages are ways to describe best practices, good
+    designs, and capture experience in a way that it is possible for others to reuse
+    this experience.
+    <P>
+    Patterns have made a huge impact on object-oriented software design. As well as
+    being tested solutions to common problems, they have become a vocabulary for talking about a design. You can therefore explain your design by describing the patterns
+    that you have used. This is particularly true for the best-known design patterns that
+    were originally described by the ‘Gang of Four’ in their patterns book, (Gamma et al.,
+    1995). Other particularly important pattern descriptions are those published in a series
+    of books by authors from Siemens, a large European technology company
+    (Buschmann et al., 1996; Buschmann et al., 2007a; Buschmann et al., 2007b; Kircher
+    and Jain, 2004; Schmidt et al., 2000).
+    <P>
+    Design patterns are usually associated with object-oriented design. Published
+    patterns often rely on object characteristics such as inheritance and polymorphism to
+    provide generality. However, the general principle of encapsulating experience in a pattern is one that is equally applicable to any kind of software design. So, you could
+    have configuration patterns for COTS systems. Patterns are a way of reusing the
+    knowledge and experience of other designers.
+    
+    <section class =>
+        <img src="Pattern2.png" alt="">
+    </section>
+    
+    <section>
+    
+    <H1> Figure 7.11 Multiple displays </H1>
+    <P>
+        The four essential elements of design patterns were defined by the ‘Gang of Four’
+    in their patterns book:
+    
+    <P>
+        1. A name that is a meaningful reference to the pattern.
+    <P>
+    2. A description of the problem area that explains when the pattern may be
+    applied.
+    <P>
+    3. A solution description of the parts of the design solution, their relationships, and
+    their responsibilities. This is not a concrete design description. It is a template
+    for a design solution that can be instantiated in different ways. This is often
+    expressed graphically and shows the relationships between the objects and
+    object classes in the solution.
+    <P>
+    4. A statement of the consequences—the results and trade-offs—of applying the
+    pattern. This can help designers understand whether or not a pattern can be used
+    in a particular situation.
+    <P> 
+        Gamma and his co-authors break down the problem description into motivation
+    (a description of why the pattern is useful) and applicability (a description of situations
+    in which the pattern may be used). Under the description of the solution, they describe
+    the pattern structure, participants, collaborations, and implementation.
+    <P>
+     To illustrate pattern description, I use the Observer pattern, taken from the book
+    by Gamma et al. (Gamma et al., 1995). This is shown in Figure 7.10. In my description, I use the four essential description elements and also include a brief statement
+    of what the pattern can do. This pattern can be used in situations where different
+    presentations of an object’s state are required. It separates the object that must be
+    displayed from the different forms of presentation. This is illustrated in Figure 7.11,
+    which shows two graphical presentations of the same data set.
+    
+    <P>
+        Graphical representations are normally used to illustrate the object classes in
+    patterns and their relationships. These supplement the pattern description and add detail to the solution description. Figure 7.12 is the representation in UML of the
+    Observer pattern.
+    
+    <section class =>
+        <img src="pattern3.png" alt="">
+    </section>
+    
+    
+    </P>
+    </section>
+    <section>
+    <H1> Figure 7.12 A UML model of the Observer Pattern </H1>
+    
+    <P>
+    To use patterns in your design, you need to recognize that any design problem you are facing may have an associated pattern that can be applied. Examples of such problems, documented in the ‘Gang of Four’s original patterns book, include:
+    <P>
+        1. Tell several objects that the state of some other object has changed (Observer
+    pattern).
+    <P>
+    2. Tidy up the interfaces to a number of related objects that have often been developed incrementally (Façade pattern).
+    <P>
+    3. Provide a standard way of accessing the elements in a collection, irrespective of
+    how that collection is implemented (Iterator pattern).
+    <P>
+    4. Allow for the possibility of extending the functionality of an existing class at
+    run-time (Decorator pattern).
+    <P>
+    Patterns support high-level, concept reuse. When you try to reuse executable components you are inevitably constrained by detailed design decisions that have been made by the implementers of these components. These range from the particular algorithms that have been used to implement the components to the objects and types in the component interfaces. When these design decisions conflict with your particular requirements, reusing the component is either impossible or introduces inefficiencies into your system. Using patterns means that you reuse the ideas but can adapt the implementation to suit the system that you are developing.
+    <P>
+        When you start designing a system, it can be difficult to know, in advance, if you will need a particular pattern. Therefore, using patterns in a design process often involves developing a design, experiencing a problem, and then recognizing that a pattern can be used. This is certainly possible if you focus on the 23 general-purpose patterns documented in the original patterns book. However, if your problem is a different one, you may find it difficult to find an appropriate pattern amongst the hundreds of different patterns that have been proposed.
+    <P>
+        Patterns are a great idea but you need experience of software design to use them effectively. You have to recognize situations where a pattern can be applied. Inexperienced programmers, even if they have read the pattern books, will always find it hard to decide whether they can reuse a pattern or need to develop a special purpose solution.
+    </P>
+
+    <footer>
+        <div>
+            <p>&copy; 2025 Design Patterns. All Rights Reserved.</p>
+        </div>
+        <div>
+            <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <p>Follow us:</p>
+            <a href="https://www.facebook.com/yourcompany" target="_blank">Facebook</a> |
+            <a href="https://www.twitter.com/yourcompany" target="_blank">Twitter</a> |
+            <a href="https://www.instagram.com/yourcompany" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <h1> Develop by Elizabeth Gutierrez </h1>
+    
+    </body>
+    </html>
+    
+    </section>
+    
+    </main>
+    </body>
+    </html>

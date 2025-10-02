@@ -1,3 +1,4 @@
+patch-3
 footer {
     background-color: rgb(5, 82, 128);
     color: white;
@@ -8,6 +9,24 @@ footer {
 
 footer a {
     color: white;
+
+body{
+    font-size: 20px;
+    margin: 10px 10px;
+}
+.C{
+    font-size: 30px;
+}
+footer {
+    background-color:rgb(24, 15, 146);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color:aliceblue;
+main
     text-decoration: none;
     margin: 0 10px;
 }
