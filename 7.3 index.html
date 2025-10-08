@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Issues</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+
+        <h1>7.3.1 Reuse</h1>
+        
+        <p class="p1">From the 1960s to the 1990s, most new software was developed from scratch, by writing all code in a high-level programming language. The only significant reuse or software was the reuse of functions and objects in programming language libraries. However, costs and schedule pressure meant that this approach became increasingly unviable, especially for commercial and Internet-based systems. Consequently, an approach to development based around the reuse of existing software emerged and is now generally used for business systems, scientific software, and, increasingly, in embedded systems engineering.</p>
+        <p class="p17">Software reuse is possible at a number of different levels:</p>
+
+        <p>1. The abstraction level: At this level, you don’t reuse software directly but rather use knowledge of successful abstractions in the design of your software. Design patterns and architectural patterns (covered in Chapter 6) are ways of representing abstract knowledge for reuse.</p>
+
+        <p>2. The object level: At this level, you directly reuse objects from a library rather than writing the code yourself. To implement this type of reuse, you have to find appropriate libraries and discover if the objects and methods offer the functionality that you need. For example, if you need to process mail messages in a Java program, you may use objects and methods from a JavaMail library.</p>
+
+        <p>3. The system level: At this level, you reuse entire application systems. This usually involves some kind of configuration of these systems. This may be done by adding and modifying code (if you are reusing a software product line) or by using the system’s own configuration interface. Most commercial systems are now built in this way where generic COTS (commercial off-the-shelf) systems are adapted and reused. Sometimes this approach may involve reusing several different systems and integrating these to create a new system.</p>
+
+        <p class="p2">By reusing existing software, you can develop new systems more quickly, with fewer development risks and also lower costs. As the reused software has been tested in other applications, it should be more reliable than new software. However, there are costs associated with reuse:</p>
+
+        <p>1. The costs of the time spent in looking for software to reuse and assessing whether or not it meets your needs. You may have to test the software to make sure that it will work in your environment, especially if this is different from its development environment.</p>
+
+        <p>2. Where applicable, the costs of buying the reusable software. For large off-the-shelf systems, these costs can be very high.</p>
+
+        <p>3. The costs of adapting and configuring the reusable software components or systems to reflect the requirements of the system that you are developing.</p>
+
+        <p>4. The costs of integrating reusable software elements with each other (if you are using software from different sources) and with the new code that you have developed. Integrating reusable software from different providers can be difficult and expensive because the providers may make conflicting assumptions about how their respective software will be reused.</p>
+
+        <p class="p1">How to reuse existing knowledge and software should be the first thing you should think about when starting a software development project. You should consider the possibilities of reuse before designing the software in detail, as you may wish to adapt your design to reuse existing software assets. As I discussed in Chapter 2, in a reuse-oriented development process, you search for reusable elements then modify your requirements and design to make best use of these. For a large number of application systems, software engineering really means software reuse. I therefore devote several chapters in the software technologies section of the book to this topic (Chapters 16, 17, and 19).</p>
+
+        <h1>7.3.2 Configuration Management</h1>
+        <p class="p1">In software development, change happens all the time, so change management is absolutely essential. When a team of people are developing software, you have to make sure that team members don’t interfere with each others’ work. That is, if two people are working on a component, their changes have to be coordinated. Otherwise, one programmer may make changes and overwrite the other’s work. You also have to ensure that everyone can access the most up-to-date versions of software components, otherwise developers may redo work that has already been done. When something goes wrong with a new version of a system, you have to be able to go back to a working version of the system or component.</p>
+
+        <p class="p1">Configuration management is the name given to the general process of managing a changing software system. The aim of configuration management is to support the system integration process so that all developers can access the project code and documents in a controlled way, find out what changes have been made, and compile and link components to create a system. There are, therefore, three fundamental configuration management activities:</p>
+
+        <p>1. Version management, where support is provided to keep track of the different versions of software components. Version management systems include facilities to coordinate development by several programmers. They stop one developer overwriting code that has been submitted to the system by someone else.</p>
+
+        <p>2. System integration, where support is provided to help developers define what versions of components are used to create each version of a system. This description is then used to build a system automatically by compiling and linking the required components.</p>
+
+        <p>3. Problem tracking, where support is provided to allow users to report bugs and other problems, and to allow all developers to see who is working on these problems and when they are fixed.</p>
+
+        <p class="p1">Software configuration management tools support each of the above activities. These tools may be designed to work together in a comprehensive change management system, such as ClearCase (Bellagio and Milligan, 2005). In integrated configuration management systems, version management, system integration, and problem-tracking tools are designed together. They share a user interface style and are integrated through a common code repository.</p>
+
+        <p class="p1">Alternatively, separate tools, installed in an integrated development environment, may be used. Version management may be supported using a version management system such as Subversion (Pilato et al., 2008), which can support multi-site, multi-team development. System integration support may be built into the language or rely on a separate toolset such as the GNU build system. This includes what is perhaps the best-known integration tool, Unix make. Bug tracking or issue tracking systems, such as Bugzilla, are used to report bugs and other issues and to keep track of whether or not these have been fixed.</p>
+
+        <p class="p1">Because of its importance in professional software engineering, I discuss change and configuration management in more detail in Chapter 25.</p>
+
+        <h1>7.3.3 Host-target Development</h1>
+       <p class="p1">Most software development is based on a host-target model. Software is developed on one computer (the host), but runs on a separate machine (the target). More generally, we can talk about a development platform and an execution platform. A platform is more than just hardware. It includes the installed operating system plus other supporting software such as a database management system or, for development platforms, an interactive development environment.</p>
+
+        <p class="p1">Sometimes, the development and execution platforms are the same, making it possible to develop the software and test it on the same machine. More commonly, however, they are different so that you need to either move your developed software to the execution platform for testing or run a simulator on your development machine.</p>
+
+        <p class="p1">Simulators are often used when developing embedded systems. You simulate hardware devices, such as sensors, and the events in the environment in which the system will be deployed. Simulators speed up the development process for embedded systems as each developer can have their own execution platform with no need to download the software to the target hardware. However, simulators are expensive to develop and so are only usually available for the most popular hardware architectures.</p>
+
+        <p class="p1">If the target system has installed middleware or other software that you need to use, then you need to be able to test the system using that software. It may be impractical to install that software on your development machine, even if it is the same as the target platform, because of license restrictions. In those circumstances, you need to transfer your developed code to the execution platform to test the system.</p>
+
+       
+
+        <p class="p1">A software development platform should provide a range of tools to support software engineering processes. These may include:</p>
+
+        <p>1. An integrated compiler and syntax-directed editing system that allows you to create, edit, and compile code.</p>
+
+        <p>2. A language debugging system.</p>
+
+        <p>3. Graphical editing tools, such as tools to edit UML models.</p>
+
+        <p>4. Testing tools, such as JUnit (Massol, 2003) that can automatically run a set of tests on a new version of a program.</p>
+
+        <p>5. Project support tools that help you organize the code for different development projects.</p>
+
+        <p class="p1">As well as these standard tools, your development system may include more specialized tools such as static analyzers (discussed in Chapter 15). Normally, development environments for teams also include a shared server that runs a change and configuration management system and, perhaps, a system to support requirements management.</p>
+
+        <p class="p1">Software development tools are often grouped to create an integrated development environment (IDE). An IDE is a set of software tools that supports different aspects of software development, within some common framework and user interface. Generally, IDEs are created to support development in a specific programming language such as Java. The language IDE may be developed specially, or may be an instantiation of a general-purpose IDE, with specific language-support tools.</p>
+
+        <p class="p1">A general-purpose IDE is a framework for hosting software tools that provides data management facilities for the software being developed, and integration mechanisms, that allow tools to work together. The best-known general-purpose IDE is the Eclipse environment (Carlson, 2005). This environment is based on a plug-in architecture so that it can be specialized for different languages and application domains (Clayberg and Rubel, 2006). Therefore, you can install Eclipse and tailor it for your specific needs by adding plug-ins. For example, you may add a set of plug-ins to support networked systems development in Java or embedded systems engineering using C.</p>
+
+        <p class="p1">As part of the development process, you need to make decisions about how the developed software will be deployed on the target platform. This is straightforward for embedded systems, where the target is usually a single computer. However, for distributed systems, you need to decide on the specific platforms where the components will be deployed. Issues that you have to consider in making this decision are:</p>
+
+        <p>1. The hardware and software requirements of a component: If a component is designed for a specific hardware architecture, or relies on some other software system, it must obviously be deployed on a platform that provides the required hardware and software support.</p>
+
+        <p>2. The availability requirements of the system: High-availability systems may require components to be deployed on more than one platform. This means that, in the event of platform failure, an alternative implementation of the component is available.</p>
+
+        <p>3. Component communications: If there is a high level of communications traffic between components, it usually makes sense to deploy them on the same platform or on platforms that are physically close to one other. This reduces communications latency, the delay between the time a message is sent by one component and received by another.</p>
+
+        <p class="p1">You can document your decisions on hardware and software deployment using UML deployment diagrams, which show how software components are distributed across hardware platforms.</p>
+
+        <p class="p1">If you are developing an embedded system, you may have to take into account target characteristics, such as its physical size, power capabilities, the need for real-time responses to sensor events, the physical characteristics of actuators, and its real-time operating system. I discuss embedded systems engineering in Chapter 20.</p>
+    
+        <footer>
+            
+    <section>
+        <p>&copy; 2025 Configuration Management . All rights reserved.</p>
+    </section>
+    <section>
+        <ul>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms of Service</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </section>
+    <p>___________________________________________________________________________________</p>
+    <section>
+        <p>Follow us on:</p>
+        <ul>
+            <li><a href="https://www.facebook.com/ranny.banaag.14" target="_blank">Facebook</a></li>
+            <li><a href="https://www.twitter.com/yourpage" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/yourpage" target="_blank">LinkedIn</a></li>
+        </ul>
+    </section>
+    <h1>Developed By : Ranny Banaag</h1>
+</footer>
+    </main>
+</body>
+</html>
