@@ -1,67 +1,72 @@
-/* Configurations */
-:root {
-  --primary: #333;
-  --secondary: #f9f9f9;
-  --complimentary: #2c3e50;
-  --dark: #34495e;
-  --light: white;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
-}
+/* =========================
+   Custom Class Mappings
+========================= */
 
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.8;
-  background: var(--secondary);
-  color: var(--primary);
-}
-
-main {
-  padding: 20px 40px;
+/* Body */
+.juanluna-body {
+  @apply font-[Poppins] text-[#2C2C2C] bg-[#9B5DE0] bg-fixed leading-relaxed;
 }
 
 /* Header */
-header {
-  background: var(--complimentary);
-  color: var(--light);
-  padding: 20px;
-  text-align: center;
+.carlos1-header {
+  @apply bg-[#F2AEBB] text-white text-center py-8 shadow-lg rounded-b-2xl;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 3rem;
+.carlos2-title {
+  @apply text-2xl sm:text-3xl font-semibold tracking-wide;
 }
 
-/* Headings */
-h2 {
-  color: var(--complimentary);
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-  margin-top: 0px;
+.carlos3-subtitle {
+  @apply text-base sm:text-lg mt-1;
 }
 
-/* Lists */
-ul {
-  margin: 15px 50px; 
-  padding-left: 20px;
+/* Main */
+.miguelito-main {
+  @apply bg-white max-w-5xl mx-auto my-10 px-6 sm:px-10 md:px-16 lg:px-20 py-10 rounded-2xl shadow-2xl transition-all duration-300;
 }
 
-li {
-  margin-bottom: 10px;
+/* Section: Key Points */
+.andres1-section {
+  @apply mt-5;
 }
 
-strong {
-  color: var(--dark);
+.andres2-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
+}
+
+.andres3-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify;
+}
+
+/* Section: Further Reading */
+.ramonbautista-section {
+  @apply mt-10;
+}
+
+.ramon1-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
+}
+
+.ramon2-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify;
+}
+
+.ramon-strong {
+  @apply text-[#9B5DE0];
 }
 
 /* Footer */
-footer {
-  background: var(--complimentary);
-  color: var(--light);
-  text-align: center;
-  padding: 15px 10px;
-  margin-top: 40px;
+.pedropenduko-footer {
+  @apply bg-[#F2AEBB] text-white text-center py-10 shadow-lg rounded-t-2xl mt-16;
+}
+
+.pedro1-text {
+  @apply text-base tracking-wide;
+}
+
+.pedro2-note {
+  @apply mt-2;
 }

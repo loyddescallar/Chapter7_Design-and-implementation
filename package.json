@@ -1,17 +1,27 @@
 {
   "name": "pang-tailwind",
   "version": "1.0.0",
-  "description": "",
+  "description": "<DOCTYPE html> \r <html lang=\"en\">\r <head>\r     <meta charset=\"UTF-8\">\r     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r     <title> WEB</title>\r </head>\r <body>\r <main>",
+  "homepage": "https://github.com/loyddescallar/Chapter7_Design-and-implementation#readme",
+  "bugs": {
+    "url": "https://github.com/loyddescallar/Chapter7_Design-and-implementation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loyddescallar/Chapter7_Design-and-implementation.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.14",
     "tailwind": "^4.0.0",
     "tailwindcss": "^4.1.14"
-  }
+  },
+  "devDependencies": {}
 }

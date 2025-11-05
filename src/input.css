@@ -1,1 +1,88 @@
 @import "tailwindcss";
+
+/* ✅ Custom Font */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2'),
+       url('/fonts/Poppins-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+/* Body */
+.juanluna-body {
+  @apply font-[Poppins] text-[#2C2C2C] bg-[#9B5DE0] bg-fixed leading-relaxed;
+  background-image: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 60%), 
+                    radial-gradient(circle at bottom right, rgba(255,255,255,0.15), transparent 60%);
+  background-size: cover;
+}
+
+/* Header */
+.carlos1-header {
+  @apply bg-[#F2AEBB] text-white text-center py-8 shadow-lg rounded-b-2xl relative overflow-hidden;
+}
+
+.carlos2-title {
+  @apply text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-wide drop-shadow-md;
+}
+
+.carlos3-subtitle {
+  @apply text-base sm:text-lg lg:text-xl mt-1 opacity-90;
+}
+
+/* Main */
+.miguelito-main {
+  @apply bg-white max-w-6xl mx-auto my-10 px-6 sm:px-10 md:px-16 lg:px-20 py-10 rounded-2xl shadow-2xl transition-all duration-300 relative;
+}
+
+.miguelito-main::before {
+  content: "";
+  @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-[#F2AEBB]/20 to-[#9B5DE0]/20 opacity-0 hover:opacity-100 transition-all duration-500;
+}
+
+/* Section: Key Points */
+.andres1-section {
+  @apply mt-5;
+}
+
+.andres2-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl lg:text-4xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
+}
+
+.andres3-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify leading-relaxed;
+}
+
+/* Section: Further Reading */
+.ramonbautista-section {
+  @apply mt-10;
+}
+
+.ramon1-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl lg:text-4xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
+}
+
+.ramon2-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify leading-relaxed;
+}
+
+.ramon-strong {
+  @apply text-[#9B5DE0];
+}
+
+/* Footer */
+.pedropenduko-footer {
+  @apply bg-[#F2AEBB] text-white text-center py-10 shadow-lg rounded-t-2xl mt-16 relative overflow-hidden;
+}
+
+.pedropenduko-footer::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-r from-[#9B5DE0]/20 to-[#F2AEBB]/20 animate-pulse;
+}
+
+.pedro1-text {
+  @apply text-base tracking-wide relative z-10;
+}
+
+.pedro2-note {
+  @apply mt-2 relative z-10;
+}
