@@ -1,1 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 @import "tailwindcss";
+
+
+
+
+@theme {
+--color-background: #FDCFFA;
+--color-banner: #F2AEBB;
+--color-button: #9B5DE0;
+--color-container: #D78FEE;
+--color-footercolor: #6E8CFB;
+--color-backgradient: #daf22ff;
+--color-frontgradient: #9733ee;
+--color-pinkgradient: #E100FF;
+--color-purpgradient: #7F00FF;
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  
+}
+
+
+
+
+}
+
+@theme{
+    --font-display: "Londrina Shadow", sans-serif;
+
+
+}
+
+
+/* HomePage */
+
+
+.body {
+    @apply bg-background
+}
+
+.Links {
+    @apply bg-gradient-to-br from-frontgradient to-container flex flex-row py-3
+}
+
+.Title {
+    @apply xl:ml-4 text-left text-wrap font-bold text-2xl sm:text-2xl basis-0 sm:basis-85 md:basis-100 xl:text-4xl lg:basis-170 xl:-mt-2 ml-4 xl:basis-230 
+}
+
+
+
+.M1 {
+    @apply bg-button px-3 mx-1 rounded-2xl border-2 sm:mx-3 md:px-5 md:mx-5 lg:mx-5 hover:opacity-80 hover:border-red-500 ease-in-out duration-300
+}
+
+
+.design {
+    @apply bg-gradient-to-br from-purpgradient to-pinkgradient my-5 mx-5 text-2xl text-center font-bold xl:text-5xl xl:my-10  xl:py-10 xl:px-10 xl:mx-20 border-solid border-2 rounded-2xl 
+}
+
+
+
+.Objectives {
+    @apply bg-container text-sm font-semibold mb-13 mx-5 px-5 py-2 text-justify xl:mx-20 xl:my-10 xl:px-5 xl:py-5 rounded-2xl xl:text-2xl hover:bg-gradient-to-br hover:from-purpgradient hover:to-pinkgradient transition duration-700 ease-in-out
+}
+
+
+.Contents {
+    @apply flex flex-col
+}
+
+.Preview {
+    @apply mt-5 font-semibold xl:text-xl text-sm xl:mx-5
+}
+
+.txtbold {
+    @apply font-bold xl:text-2xl
+}
+.cntns {
+    @apply bg-container mx-5 text-lg px-10 mb-10 py-5 rounded-2xl hover:bg-gradient-to-br hover:from-purpgradient hover:to-pinkgradient transition duration-700 ease-in-out
+}
+
+.KPP {
+    @apply font-bold xl:text-2xl
+}
+
+
+.KP {
+    @apply bg-container cursor-pointer mx-5 text-lg px-10 mb-10 py-5 rounded-2xl hover:bg-gradient-to-br hover:from-purpgradient hover:to-pinkgradient transition duration-700 ease-in-out text-center
+}
+
+.keypoints {
+    @apply text-center
+}
+
+
+/* 7.4 */
+
+.Background2 {
+    @apply bg-background 
+}
+
+
+.H1Banner {
+  @apply text-center py-2 font-bold text-[25px] md:text-[50px] mx-5 my-4 rounded-2xl drop-shadow-lg font-display border-solid border-4 text-black;
+  background: linear-gradient(270deg, #f9a8d4, #f0abfc, #c084fc, #a5b4fc, #f9a8d4);
+  background-size: 600% 600%;
+  animation: gradientShift 8s ease infinite;
+}
+
+
+
+
+
+.Info1 {
+    @apply bg-container rounded-2xl border-solid border-5 text-xl px-5 py-5 mx-10 sm:mx-20 sm:text-2xl sm:py-5 sm:px-5 md:mx-30 md:py-10 md:px-10 text-justify lg:px-10 lg:mx-40 lg:py-10 
+}
+
+
+.Number {
+    @apply font-bold my-5
+}
+.About {
+    @apply md:text-[40px] font-bold text-[25px] mb-7 underline font-display
+}
+
+
+.Previous {
+    @apply text-center my-5 bg-container mx-40 rounded-2xl border-solid border-3 sm:mx-65 md:mx-105 lg:mx-160 hover:scale-105 hover:opacity-75 ease-in-out duration-100
+}
+
+
+
+
+.Footer {
+  @apply mt-50 py-[50px] text-[20px] md:text-[30px] text-center text-black;
+  background: linear-gradient(270deg, #fbcfe8, #f0abfc, #c084fc, #a78bfa, #fbcfe8);
+  background-size: 600% 600%;
+  animation: gradientShift 8s ease infinite;
+}
