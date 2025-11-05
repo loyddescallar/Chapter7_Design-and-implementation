@@ -1,17 +1,26 @@
 {
   "name": "pang-tailwind",
   "version": "1.0.0",
-  "description": "",
+  
+  "homepage": "https://github.com/loyddescallar/Chapter7_Design-and-implementation#readme",
+  "bugs": {
+    "url": "https://github.com/loyddescallar/Chapter7_Design-and-implementation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loyddescallar/Chapter7_Design-and-implementation.git"
+  },
+ 
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.14",
     "tailwind": "^4.0.0",
     "tailwindcss": "^4.1.14"
-  }
+  },
+  "devDependencies": {}
 }

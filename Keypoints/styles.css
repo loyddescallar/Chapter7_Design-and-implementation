@@ -1,0 +1,72 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+/* =========================
+   Custom Class Mappings
+========================= */
+
+/* Body */
+.juanluna-body {
+  @apply font-[Poppins] text-[#2C2C2C] bg-[#9B5DE0] bg-fixed leading-relaxed;
+}
+
+/* Header */
+.carlos1-header {
+  @apply bg-[#F2AEBB] text-white text-center py-8 shadow-lg rounded-b-2xl;
+}
+
+.carlos2-title {
+  @apply text-2xl sm:text-3xl font-semibold tracking-wide;
+}
+
+.carlos3-subtitle {
+  @apply text-base sm:text-lg mt-1;
+}
+
+/* Main */
+.miguelito-main {
+  @apply bg-white max-w-5xl mx-auto my-10 px-6 sm:px-10 md:px-16 lg:px-20 py-10 rounded-2xl shadow-2xl transition-all duration-300;
+}
+
+/* Section: Key Points */
+.andres1-section {
+  @apply mt-5;
+}
+
+.andres2-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
+}
+
+.andres3-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify;
+}
+
+/* Section: Further Reading */
+.ramonbautista-section {
+  @apply mt-10;
+}
+
+.ramon1-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
+}
+
+.ramon2-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify;
+}
+
+.ramon-strong {
+  @apply text-[#9B5DE0];
+}
+
+/* Footer */
+.pedropenduko-footer {
+  @apply bg-[#F2AEBB] text-white text-center py-10 shadow-lg rounded-t-2xl mt-16;
+}
+
+.pedro1-text {
+  @apply text-base tracking-wide;
+}
+
+.pedro2-note {
+  @apply mt-2;
+}

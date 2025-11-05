@@ -1,143 +1,88 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
-@import "tailwindcss";
 
-
-
-
-@theme {
---color-background: #FDCFFA;
---color-banner: #F2AEBB;
---color-button: #9B5DE0;
---color-container: #D78FEE;
---color-footercolor: #6E8CFB;
---color-backgradient: #daf22ff;
---color-frontgradient: #9733ee;
---color-pinkgradient: #E100FF;
---color-purpgradient: #7F00FF;
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-  
+/* ✅ Custom Font */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2'),
+       url('/fonts/Poppins-Regular.woff') format('woff');
+  font-display: swap;
 }
 
-
-
-
+/* Body */
+.juanluna-body {
+  @apply font-[Poppins] text-[#2C2C2C] bg-[#9B5DE0] bg-fixed leading-relaxed;
+  background-image: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 60%), 
+                    radial-gradient(circle at bottom right, rgba(255,255,255,0.15), transparent 60%);
+  background-size: cover;
 }
 
-@theme{
-    --font-display: "Londrina Shadow", sans-serif;
-
-
+/* Header */
+.carlos1-header {
+  @apply bg-[#F2AEBB] text-white text-center py-8 shadow-lg rounded-b-2xl relative overflow-hidden;
 }
 
-
-/* HomePage */
-
-
-.body {
-    @apply bg-background
+.carlos2-title {
+  @apply text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-wide drop-shadow-md;
 }
 
-.Links {
-    @apply bg-gradient-to-br from-frontgradient to-container flex flex-row py-3
+.carlos3-subtitle {
+  @apply text-base sm:text-lg lg:text-xl mt-1 opacity-90;
 }
 
-.Title {
-    @apply xl:ml-4 text-left text-wrap font-bold text-2xl sm:text-2xl basis-0 sm:basis-85 md:basis-100 xl:text-4xl lg:basis-170 xl:-mt-2 ml-4 xl:basis-230 
+/* Main */
+.miguelito-main {
+  @apply bg-white max-w-6xl mx-auto my-10 px-6 sm:px-10 md:px-16 lg:px-20 py-10 rounded-2xl shadow-2xl transition-all duration-300 relative;
 }
 
-
-
-.M1 {
-    @apply bg-button px-3 mx-1 rounded-2xl border-2 sm:mx-3 md:px-5 md:mx-5 lg:mx-5 hover:opacity-80 hover:border-red-500 ease-in-out duration-300
+.miguelito-main::before {
+  content: "";
+  @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-[#F2AEBB]/20 to-[#9B5DE0]/20 opacity-0 hover:opacity-100 transition-all duration-500;
 }
 
-
-.design {
-    @apply bg-gradient-to-br from-purpgradient to-pinkgradient my-5 mx-5 text-2xl text-center font-bold xl:text-5xl xl:my-10  xl:py-10 xl:px-10 xl:mx-20 border-solid border-2 rounded-2xl 
+/* Section: Key Points */
+.andres1-section {
+  @apply mt-5;
 }
 
-
-
-.Objectives {
-    @apply bg-container text-sm font-semibold mb-13 mx-5 px-5 py-2 text-justify xl:mx-20 xl:my-10 xl:px-5 xl:py-5 rounded-2xl xl:text-2xl hover:bg-gradient-to-br hover:from-purpgradient hover:to-pinkgradient transition duration-700 ease-in-out
+.andres2-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl lg:text-4xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
 }
 
-
-.Contents {
-    @apply flex flex-col
+.andres3-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify leading-relaxed;
 }
 
-.Preview {
-    @apply mt-5 font-semibold xl:text-xl text-sm xl:mx-5
+/* Section: Further Reading */
+.ramonbautista-section {
+  @apply mt-10;
 }
 
-.txtbold {
-    @apply font-bold xl:text-2xl
-}
-.cntns {
-    @apply bg-container mx-5 text-lg px-10 mb-10 py-5 rounded-2xl hover:bg-gradient-to-br hover:from-purpgradient hover:to-pinkgradient transition duration-700 ease-in-out
+.ramon1-heading {
+  @apply text-[#34495E] text-2xl sm:text-3xl lg:text-4xl font-semibold border-b-4 border-[#9B5DE0] inline-block pb-2;
 }
 
-.KPP {
-    @apply font-bold xl:text-2xl
+.ramon2-list {
+  @apply list-disc ml-8 mt-5 space-y-3 text-justify leading-relaxed;
 }
 
-
-.KP {
-    @apply bg-container cursor-pointer mx-5 text-lg px-10 mb-10 py-5 rounded-2xl hover:bg-gradient-to-br hover:from-purpgradient hover:to-pinkgradient transition duration-700 ease-in-out text-center
+.ramon-strong {
+  @apply text-[#9B5DE0];
 }
 
-.keypoints {
-    @apply text-center
+/* Footer */
+.pedropenduko-footer {
+  @apply bg-[#F2AEBB] text-white text-center py-10 shadow-lg rounded-t-2xl mt-16 relative overflow-hidden;
 }
 
-
-/* 7.4 */
-
-.Background2 {
-    @apply bg-background 
+.pedropenduko-footer::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-r from-[#9B5DE0]/20 to-[#F2AEBB]/20 animate-pulse;
 }
 
-
-.H1Banner {
-  @apply text-center py-2 font-bold text-[25px] md:text-[50px] mx-5 my-4 rounded-2xl drop-shadow-lg font-display border-solid border-4 text-black;
-  background: linear-gradient(270deg, #f9a8d4, #f0abfc, #c084fc, #a5b4fc, #f9a8d4);
-  background-size: 600% 600%;
-  animation: gradientShift 8s ease infinite;
+.pedro1-text {
+  @apply text-base tracking-wide relative z-10;
 }
 
-
-
-
-
-.Info1 {
-    @apply bg-container rounded-2xl border-solid border-5 text-xl px-5 py-5 mx-10 sm:mx-20 sm:text-2xl sm:py-5 sm:px-5 md:mx-30 md:py-10 md:px-10 text-justify lg:px-10 lg:mx-40 lg:py-10 
-}
-
-
-.Number {
-    @apply font-bold my-5
-}
-.About {
-    @apply md:text-[40px] font-bold text-[25px] mb-7 underline font-display
-}
-
-
-.Previous {
-    @apply text-center my-5 bg-container mx-40 rounded-2xl border-solid border-3 sm:mx-65 md:mx-105 lg:mx-160 hover:scale-105 hover:opacity-75 ease-in-out duration-100
-}
-
-
-
-
-.Footer {
-  @apply mt-50 py-[50px] text-[20px] md:text-[30px] text-center text-black;
-  background: linear-gradient(270deg, #fbcfe8, #f0abfc, #c084fc, #a78bfa, #fbcfe8);
-  background-size: 600% 600%;
-  animation: gradientShift 8s ease infinite;
+.pedro2-note {
+  @apply mt-2 relative z-10;
 }
