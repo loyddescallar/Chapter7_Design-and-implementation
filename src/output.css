@@ -26,6 +26,13 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-background: #FDCFFA;
+    --color-button: #9B5DE0;
+    --color-container: #D78FEE;
+    --color-frontgradient: #9733ee;
+    --color-pinkgradient: #E100FF;
+    --color-purpgradient: #7F00FF;
+    --font-display: "Londrina Shadow", sans-serif;
   }
 }
 @layer base {
